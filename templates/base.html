@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class=" js no-touch csstransforms csstransforms3d csstransitions svg js-ready">
+    <head lang="en-US">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width">
+        <title>{{ p.title }} - рассылки evomailing</title>
+
+        <link rel="stylesheet" id="rs-settings-css" href="/static/css/sheet.css" type="text/css" media="all">
+        <link rel="stylesheet" id="rs-settings-css" href="/static/css/settings.css" type="text/css" media="all">
+        <link rel="stylesheet" id="rs-captions-css" href="/static/css/captions.css" type="text/css" media="all">
+        <link rel="stylesheet" id="rgs-css" href="/static/css/rgs.css" type="text/css" media="all">
+        <link rel="stylesheet" id="responsive-css" href="/static/css/responsive.css" type="text/css" media="all">
+        <link rel="stylesheet" id="font-awesome-css" href="/static/css/font-awesome.min.css" type="text/css" media="all">
+        <link rel="stylesheet" id="main-styles-css" href="/static/css/style.css" type="text/css" media="all">
+        <!--[if lt IE 9]>
+        <link rel='stylesheet' id='ie8-css'  href='/static/css/ie8.css?ver=3.5.2' type='text/css' media='all' />
+        <![endif]-->
+        <link rel="stylesheet" id="dynamic_colors-css" href="/static/css/colors.css" type="text/css" media="all">
+        <script async="" src="/static/js/analytics.js"></script><script type="text/javascript" src="/static/js/jquery.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.themepunch.plugins.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="/static/js/modernizr.js"></script>
+        <script type="text/javascript" src="/static/js/comment-reply.min.js"></script>
+        <link rel="canonical" href="#">
+    </head>
+
+<body class="page">
+
+<div class="v-wrap">
+    
+<div id="v-header" class="v-header">
+
+<div class="sticky-wrapper"><div id="v-header-outer" data-padding="28">
+    
+    <header id="top">
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col span_3">
+                    <a id="logo" href="/">
+                        <img src='/static/images/evo/dino2.png' style='position: fixed; max-width: 200px'/>
+                    </a>
+                </div><!--/span_3-->
+                
+                <div class="col span_9 col_last">
+                    
+                    <a class="nav-btn" id="nav-open-btn" href="/static/#nav"><i class="icon-reorder"></i></a>
+                    
+                    <nav>
+                        <ul class="sf-menu">    
+                            <li class="menu-item page_item">
+                                <a href="/">Главная</a>
+                            </li>
+                            <li class="menu-item page_item">
+                                <a href="/stoimost">Стоимость</a>
+                            </li>
+                            <li class="menu-item page_item">
+                                <a href="#">Возможности</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="/evolyutsioniruyuschie-rassyilki">Эволюционирующие рассылки</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/dostavlyaemost-vo-vhodyaschie">Доставляемость во входящие</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/filtratsiya-adresatov">Фильтрация адресатов</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item page_item">
+                               <a href="#">Статьи</a>
+                               <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="/terminyi">Термины</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/optimizatsiya-rassyilki">Оптимизация рассылки</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/politika-antispama">Политка антиспама</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/format-pisem">О письмах</a>
+                                    </li>
+                               </ul>
+                            </li>
+                            <li class="menu-item page_item">
+                                <a href="#">О проекте</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="/sravnenie-s-konkurentami">Сравнение с конкурентами</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/partnerskaya-programma">Партнерская программа</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/komanda-i-kontaktyi">Команда и контакты</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                </div>
+            
+            </div>
+            
+        </div>
+        
+    </header>
+
+</div></div>
+
+    
+    <div class="container main-content">
+        {% block content %}
+        {% endblock %}
+    </div><!--/container-->
+
+{% if 'kontaktyi' in request_url %}
+    <div class="v-map">
+                <div id="map"></div>
+                <script type="text/javascript">
+                    jQuery(document).ready(function () {
+                    jQuery("#map").gmap3(
+                        { action:'addMarker',
+                            address:"москва, пресненская набережная, 12",
+                            map:{
+                            center:true,
+                            zoom:12,
+                            scrollwheel: false
+                            }})
+                    });
+                </script>
+            </div>
+            {% endif %}
+    
+<!--footer-->
+<div id="footer-outer">
+    <div class="v-scroll-down"><div class="v-arrow-down scroll" data-to="v_footer_widgets"><i class="icon-chevron-down"></i></div></div>
+            
+    <div id="footer-widgets" class="v_footer_widgets">
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col span_3 one-fourths clear-both">
+                    <div id="recent-posts-3" class="widget recent_posts_widget uppercase">        
+                        <ul>
+                            <li>
+                                <div class="post-widget-text">
+                                    <a href="/">Главная</a> <br /> <br /> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <a href="/stoimost/">Стоимость</a>  <br /> <br />
+                                </div>
+                            </li>
+                            <!--
+                            <li>
+                                <div class="post-widget-text">
+                                    <a href="#">Обучение</a> <br /> <br />
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <a href="#">Помощь</a> <br /> <br />
+                                </div>
+                            </li>-->
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <a href="/komanda-i-kontaktyi/">Обратная связь</a> <br /> <br />
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>          
+                </div><!--/span_3-->
+                
+                <div class="col span_3 one-fourths right-edge">
+                    <div id="recent-posts-3" class="widget recent_posts_widget">        
+                        <h4>Статьи и документы</h4>       
+                        <ul>
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/terminyi">Термины</a> 
+                                </div>
+                            </li>
+                             
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/politika-antispama">Политка антиспама</a> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/optimizatsiya-rassyilki">Оптимизация рассылки</a> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/format-pisem">О письмах</a> 
+                                </div>
+                            </li>
+                            
+                          <!--  <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="#">Про емейл-маркетинг</a> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="#">Эволюция</a> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="#">Ещё чёнить</a> 
+                                </div>
+                            </li>-->
+                            
+                        </ul>
+                    </div>           
+                </div><!--/span_3-->
+                
+                <div class="col span_3 one-fourths clear-both">
+                     <div id="recent-posts-3" class="widget recent_posts_widget">        
+                        <h4>Возможности</h4>       
+                        <ul>
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/evolyutsioniruyuschie-rassyilki">Эволюционирующий алгоритм</a> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/dostavlyaemost-vo-vhodyaschie">Доставляемость во Входящие</a> 
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/filtratsiya-adresatov">Фильтр адресатов</a> 
+                                </div>
+                            </li>
+                            
+                           <!-- <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="#">Статистика и анализ</a> 
+                                </div>
+                            </li>-->
+                            
+                            <!--<li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="#">Тур по сервису</a> 
+                                </div>
+                            </li>-->
+                        </ul>
+                    </div>                 
+                </div><!--/span_3-->
+                
+                <div class="col span_3 col_last one-fourths right-edge">
+                     <!-- Footer widget area 4 -->
+                    <div id="recent-posts-3" class="widget recent_posts_widget">        <h4>О проекте</h4>       
+                        <ul>
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/sravnenie-s-konkurentami">Сравнение с конкурентами</a> 
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/partnerskaya-programma">Партнерская программа</a> 
+                                </div>
+                            </li>
+                            
+                         <!--   <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="#">Вакансии</a> 
+                                </div>
+                            </li>
+                            -->
+                            <li>
+                                <div class="post-widget-text">
+                                    <i class="icon-angle-right"></i><a href="/komanda-i-kontaktyi">Команда и контакты</a> 
+                                </div>
+                            </li>
+                        </ul>
+                    </div>                   
+                </div><!--/span_3-->
+                
+            </div><!--/row-->
+            
+        </div><!--/container-->
+    
+    </div><!--/footer-widgets-->
+    
+    <div class="v-footer-bottom">
+        
+        <p id="social">
+            <br />&copy; Evomailing, 2015
+        </p>
+    </div>
+        
+</div><!--/footer-outer-->
+
+    <a id="to-top"><i class="icon-angle-up"></i></a>
+
+</div>
+
+<script type="text/javascript" src="/static/js/superfish.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+<script type="text/javascript" src="/static/js/respond.js"></script>
+<script type="text/javascript" src="/static/js/prettyPhoto.js"></script>
+<script type="text/javascript" src="/static/js/flexslider.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="/static/js/carouFredSel.min.js"></script>
+<script type="text/javascript" src="/static/js/jplayer.min.js"></script>
+<script type="text/javascript" src="/static/js/waypoints.min.js"></script>
+<script type="text/javascript" src="/static/js/waypoints-sticky.min.js"></script>
+<script type="text/javascript" src="/static/js/init.js"></script>
+
+{% if 'kontaktyi' in request_url %}
+    <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
+    <script type='text/javascript' src='/static/js/gmap3.min.js'></script>
+{% endif %}
+
+</div>
+
+{% if not is_debug %}
+    <!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=27897942&amp;from=informer"
+target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/27897942/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:27897942,lang:'ru'});return false}catch(e){}"/></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter27897942 = new Ya.Metrika({id:27897942,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/27897942" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+{% endif %}
+
+</body>
+</html>

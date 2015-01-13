@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        
+        {% if 'home' in request_url %}
+            {% include 'home_slider.html' %}
+        {% else %}
+            {% if p.slider %}
+                <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#f6f6f6;padding:0px;margin-top:0px;margin-bottom:0px;max-height:300px;">
+                    <div id="rev_slider_2_1" class="rev_slider fullwidthabanner" style="display:none;max-height:350px;height:350;">                     
+                        <ul>
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="300" >
+                                {{ p.slider|safe }}
+                            </li>
+                        </ul>
+                        <div class="tp-bannertimer"></div>      
+                    </div>
+                </div>              
+                
+                <script type="text/javascript">
+
+                    var tpj=jQuery;
+                    tpj.noConflict();
+                    var revapi2;
+                    
+                    tpj(document).ready(function() {
+                    
+                    if (tpj.fn.cssOriginal != undefined)
+                        tpj.fn.css = tpj.fn.cssOriginal;
+                    
+                    if(tpj('#rev_slider_2_1').revolution == undefined)
+                        revslider_showDoubleJqueryError('#rev_slider_2_1');
+                    else
+                        revapi2 = tpj('#rev_slider_2_1').show().revolution(
+                        {
+                            delay:9000,
+                            startwidth:960,
+                            startheight:300,
+                            hideThumbs:200,
+                            
+                            thumbWidth:100,
+                            thumbHeight:50,
+                            thumbAmount:1,
+                            
+                            navigationType:"bullet",
+                            navigationArrows:"solo",
+                            navigationStyle:"round",
+                            
+                            touchenabled:"on",
+                            onHoverStop:"on",
+                            
+                            navigationHAlign:"center",
+                            navigationVAlign:"bottom",
+                            navigationHOffset:0,
+                            navigationVOffset:20,
+
+                            soloArrowLeftHalign:"left",
+                            soloArrowLeftValign:"center",
+                            soloArrowLeftHOffset:20,
+                            soloArrowLeftVOffset:0,
+
+                            soloArrowRightHalign:"right",
+                            soloArrowRightValign:"center",
+                            soloArrowRightHOffset:20,
+                            soloArrowRightVOffset:0,
+                                    
+                            shadow:0,
+                            fullWidth:"on",
+
+                            stopLoop:"off",
+                            stopAfterLoops:-1,
+                            stopAtSlide:-1,
+
+                            shuffle:"off",
+                            
+                            hideSliderAtLimit:0,
+                            hideCaptionAtLimit:0,
+                            hideAllCaptionAtLilmit:0,
+                            startWithSlide:0    
+                        });
+                    
+                    }); //ready
+                    
+                </script>
+            {% endif %}
+        {% endif %}
+        
+        {% if 'home' in request_url %}
+        <script>
+            jQuery(document).ready(function($){
+            
+                var $container = $('#portfolio');
+
+                //load the loading gif
+                $('.portfolio-page').before('<span id="portfolio-loading"><span>');
+                
+                $(window).load(function(){
+                    // initialize isotope
+                    $container.isotope({
+                    itemSelector : '.element',
+                    filter: '*',
+                    masonry: { columnWidth: $container.width() / 3 }
+                    });
+                    
+                        
+                    //fadeout the loading animation
+                    $('#portfolio-loading').stop(true,true).fadeOut(300);
+                    
+                    //fadeIn items one by one
+                    $('#portfolio.portfolio-items .col.span_4').css('opacity',0);
+                    $('#portfolio.portfolio-items .col.span_4').each(function(i){
+                        $(this).delay(i*150).animate({'opacity':1},350);
+                    });
+                        
+                });
+                
+                // filter items when filter link is clicked
+                $('#portfolio-filters ul li a').click(function(){
+                var selector = $(this).attr('data-filter');
+                $container.isotope({ filter: selector });
+                
+                //active classes
+                $('#portfolio-filters ul li a').removeClass('active');
+                $(this).addClass('active');
+                
+                return false;
+                });
+                
+                $('#portfolio-filters > a').click(function(){
+                    return false;
+                });
+                
+                $(window).smartresize(function(){
+                $container.isotope({
+                    masonry: { columnWidth: $container.width() / 3 }
+                });
+                });
+                        
+            });
+        </script>
+        {% endif %}
+            
+        {% if p.content %}
+            {{ p.content|safe }}
+        {% else %}
+            <div class="divider " style="background-color:white; background-image:url(/static/fons/2.jpg); height: 500px">
+                <div class="clear">&nbsp;</div>
+
+                <div class="container box">
+
+                    <h3> Страница в разработке </h3>
+                </div>
+            </div>
+        {% endif %}
+        
+    </div><!--/row-->
+{% endblock %}

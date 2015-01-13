@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /?q=*
+
+Sitemap: http://oblachko24.ru/sitemap.xml
+Host: oblachko24.ru

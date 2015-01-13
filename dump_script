@@ -1,2 +1,0 @@
-python manage.py dumpdata info pages slideshow > dumps/dump____.json
-python manage.py dumpdata catalog > dumps/dump_c___.json

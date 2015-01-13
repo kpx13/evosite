@@ -8,6 +8,8 @@ site.addsitedir(site_packages_root)
 sys.path = [os.path.dirname(root), root, site_packages_root] + sys.path
 os.environ['DJANGO_SETTINGS_MODULE'] = 'evosite.settings'
 
+print 'SYS PATH IS', sys.path
+
 import django.core.handlers.wsgi
 application = django.core.handlers.wsgi.WSGIHandler()
 

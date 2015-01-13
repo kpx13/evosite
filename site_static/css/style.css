@@ -4984,10 +4984,10 @@ html{overflow:auto}
 }
 
 .tp-caption a {
-    color: #eee !important;
+    color: #c7344e !important;
     cursor: pointer;
 }
 
 .tp-caption a:hover {
-    color: #c7344e !important;
+    color: #333 !important;
 }

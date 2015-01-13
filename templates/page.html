@@ -3,9 +3,6 @@
 {% block content %}
     <div class="row">
         
-        {% if 'home' in request_url %}
-            {% include 'home_slider.html' %}
-        {% else %}
             {% if p.slider %}
                 <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#f6f6f6;padding:0px;margin-top:0px;margin-bottom:0px;max-height:300px;">
                     <div id="rev_slider_2_1" class="rev_slider fullwidthabanner" style="display:none;max-height:350px;height:350;">                     
@@ -84,7 +81,6 @@
                     
                 </script>
             {% endif %}
-        {% endif %}
         
         {% if 'home' in request_url %}
         <script>

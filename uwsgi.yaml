@@ -1,14 +1,18 @@
 uwsgi:
     socket: /var/tmp/evosite_uwsgi.sock
-    virtualenv: /var/www/ann/data/evosite/env/
-    pythonpath: /var/www/ann/data/evosite
+    pythonpath: /home/ann/evosite
+    virtualenv: /home/ann/evosite/env/
     env: DJANGO_SETTINGS_MODULE=evosite.settings
     module: wsgi
-    daemonize: /var/www/ann/data/evosite/logs/uwsgi.log
+    processes: 1
+    threads: 2
+
+    daemonize: /home/ann/evosite/logs/uwsgi.log
     max-requests: 5000
     buffer-size: 32768
-    harakiri: 30
+    harakiri: 20
     reload-mercy: 8
     master: 1
     no-orphans: 1
-    touch-reload: /var/www/ann/data/evosite/uwsgi
+    touch-reload: /home/ann/evosite/uwsgi
+

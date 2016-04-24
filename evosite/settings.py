@@ -9,7 +9,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-PROJECT_ROOT = abspath(join(dirname(__file__), "../"))
+PROJECT_ROOT = abspath(dirname(dirname(__file__)))
 LOGIN_URL = '/login'
 
 DATE_FORMAT = '%d.%m.%Y'
